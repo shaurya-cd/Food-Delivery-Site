@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 function Cart() {
 
-    const {food_list, cartItems, removeFromCart, getTotalCartAmount} = useContext(StoreContext)
+    const {url, food_list, cartItems, removeFromCart, getTotalCartAmount} = useContext(StoreContext)
 
   return (
     <div className='cart'>
@@ -22,9 +22,9 @@ function Cart() {
         {food_list.map((item,index)=>{
           if (cartItems[item._id]>0) {
             return (
-              <div>
+              <div key={item._id}>
                <div className='cart-item-title cart-items-item'>
-                <img src={item.image} alt="" />
+                <img src={url+"/images/"+item.image} alt="" />
                 <p>{item.name}</p>
                 <p>${item.price}</p>
                 <p>{cartItems[item._id]}</p>
@@ -48,12 +48,12 @@ function Cart() {
             <hr />
             <div className='cart-total-details'>
               <p>Delivery Fee</p>
-              <p>${2}</p>
+              <p>${getTotalCartAmount()===0?0:2}</p>
             </div>
             <hr />
             <div className='cart-total-details'>
               <p>Total</p>
-              <p>${getTotalCartAmount()+2}</p>
+              <p>${getTotalCartAmount()===0?0:getTotalCartAmount()+2}</p>
             </div>
           </div>
           <Link to='/order'><button>PROCEED TO CHECKOUT</button></Link>
