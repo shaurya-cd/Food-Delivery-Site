@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { StoreContext } from '../../context/StoreContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 function PlaceOrder() {
 
@@ -62,10 +63,10 @@ function PlaceOrder() {
               .then((res) => {
                 if (res.data.success) {
                   toast.success("Payment successful");
-                  // window.location.href = "/verify?success=true&orderId="+res.data.orderId;
+                  window.location.href = "/myorders";
                 } else {
                   toast.error("Payment verification failed");
-                  //window.location.href = "/verify?success=false&orderId="+res.data.orderId;
+                  window.location.href = "/verify?success=false&orderId="+res.data.orderId;
                 }
               })
               .catch((err) => { 
@@ -100,10 +101,18 @@ function PlaceOrder() {
             document.body.appendChild(script)
           })
         }
+
+        const navigate = useNavigate()
     
         useEffect(()=>{
           loadScript("https://checkout.razorpay.com/v1/checkout.js")
-        },[])
+          if(!token){
+            navigate("/cart")
+          }else if (getTotalCartAmount()===0) {
+            toast.error("Cart is empty")
+            navigate("/cart")
+          }
+        },[token])
 
 
 
