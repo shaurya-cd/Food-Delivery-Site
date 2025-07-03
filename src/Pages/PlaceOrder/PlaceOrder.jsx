@@ -63,10 +63,10 @@ function PlaceOrder() {
               .then((res) => {
                 if (res.data.success) {
                   toast.success("Payment successful");
-                  window.location.href = "/myOrders";
+                  navigate("/myOrders");
                 } else {
                   toast.error("Payment verification failed");
-                  window.location.href = "/myOrders";
+                  navigate("/myOrders");
                 }
               })
               .catch((err) => { 
