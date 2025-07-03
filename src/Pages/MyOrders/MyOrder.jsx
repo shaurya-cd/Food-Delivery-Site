@@ -4,11 +4,12 @@ import { StoreContext } from '../../context/StoreContext'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { assets } from '../../assets/assets'
+import { useState, useContext } from 'react'
 
 function MyOrder() {
 
-    const {url, token} = React.useContext(StoreContext)
-    const [data, setData] = React.useState([])
+    const {url, token} = useContext(StoreContext)
+    const [data, setData] = useState([])
 
     const fetchOrders = async () => {
         try {
