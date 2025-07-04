@@ -56,13 +56,13 @@
 }
 
 .navbar-search-icon i{
-    font-size: 30px;
+    font-size: 34px;
     color: #347433;
     cursor: pointer;
 }
 
 .search-icon{
-    font-size: 30px;
+    font-size: 34px;
     color: #347433;
     cursor: pointer;
 }
@@ -80,6 +80,12 @@
 .navbar-profile{
     position: relative;
 
+}
+
+.navbar-profile i{
+    font-size: 38px;
+    color: #347433;
+    cursor: pointer;
 }
 
 .nav-profile-dropdown{

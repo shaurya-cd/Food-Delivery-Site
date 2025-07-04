@@ -37,7 +37,7 @@ function Navbar({setShowLogin}) {
             {!token
             ?<button onClick={()=>setShowLogin(true)}>sign in</button>
             :<div className='navbar-profile'>
-                <img src={assets.profile_icon} alt="" />
+                <i class="ri-account-circle-line"></i>
                 <ul className="nav-profile-dropdown">
                     <li onClick={()=>navigate('/myOrders')} ><img src={assets.bag_icon} alt=""/><p>Orders</p></li>
                     <hr />
