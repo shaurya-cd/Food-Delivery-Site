@@ -17,6 +17,11 @@
     gap: 80px;
 }
 
+.footer-content-left .footer-img{
+    width: 200px;
+    margin-left: -1rem;
+}
+
 .footer-content-left, .footer-content-center, .footer-content-right{
     display: flex;
     flex-direction: column;

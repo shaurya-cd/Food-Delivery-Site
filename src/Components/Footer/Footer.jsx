@@ -7,7 +7,7 @@ function Footer() {
     <div className='footer' id='footer'>
         <div className="footer-content">
             <div className="footer-content-left">
-                <img src={assets.logo} alt="" />
+                <img className='footer-img' src={assets.logo} alt="" />
                 <p>Experience the luxury of fine dining—delivered fresh, fast, and flawlessly to your doorstep</p>
                 <div className="footer-social-icon">
                     <img src={assets.facebook_icon} alt="" />
@@ -28,13 +28,13 @@ function Footer() {
                 <h2>GET IN TOUCH</h2>
                 <ul>
                     <li>+1-384-465-1034</li>
-                    <li>contact@tomato.com</li>
+                    <li>contact@dietclub.com</li>
                 </ul>
             </div>
         </div>
         <hr />
         <p className="footer-copyright">
-            © 2025 Tomato.com - All rights reserved.
+            © 2025 DietClub.com - All rights reserved.
         </p>
     </div>
   )

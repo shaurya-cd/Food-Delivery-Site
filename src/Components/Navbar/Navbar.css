@@ -13,7 +13,7 @@
     display: flex;
     list-style: none;
     gap: 20px;
-    color: #49577e;
+    color: gray;
     font-size: 18px;
 }
 
@@ -34,8 +34,8 @@
 .navbar button{
     background: transparent;
     font-size: 16px;
-    color: #49577e;
-    border: 1px solid tomato;
+    color: #347433;
+    border: 1px solid #347433;
     padding: 10px 30px;
     border-radius: 50px;
     cursor: pointer;
